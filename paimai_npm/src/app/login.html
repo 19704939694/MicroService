@@ -1,0 +1,39 @@
+<div class="back" style="overflow-y:hidden">
+  <div class="form-signin">
+    <div class="text-center mb-4">
+      <div width="72" height="72" class="mb-4"></div>
+      <img width="72" height="72" class="mb-4" alt="" src="">
+      <h1 class="h3 mb-3 font-weight-normal" style="color:white;">用户登录</h1>
+      <p style="color:white;">请使用已注册的 <span class="label label-primary">邮箱</span> 进行登录 <br></p>
+    </div>
+
+    <div class="form-label-group">
+      <input class="form-control" id="inputEmail" autofocus="" [(ngModel)]="username" required="" type="email" placeholder="Email address">
+      <label for="inputEmail"></label>
+    </div>
+
+    <div class="form-label-group">
+      <input class="form-control" id="inputPassword" required="" [(ngModel)]="userpassword" type="password" placeholder="Password">
+      <label for="inputPassword"></label>
+    </div>
+
+    <div class="checkbox mb-3">
+      <label style="width: 100%;">
+        <input type="checkbox" value="remember-me"> Remember me
+        <span *ngIf="errorcode ===1" style="float: right;color:tomato;font-weight: bold;">用户名不能为空请重新输入！</span>
+        <span *ngIf="errorcode ===2" style="float: right;color:tomato;font-weight: bold;">密码不能为空请重新输入！</span>
+        <span *ngIf="errorcode ===3" style="float: right;color:tomato;font-weight: bold;">用户名或密码不正确请重新输入！</span>
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" (click)="nagigate()">Sign in</button>
+    <div class="text-center mb-4">
+      <p style="color:white;"><span class="label" style="float:left;margin-left:70px;"><a
+            href="https://caniuse.com/#feat=css-placeholder-shown">忘记密码？</a></span><span class="label"
+          style="float:right;margin-right:70px;"><a href="https://caniuse.com/#feat=css-placeholder-shown">注册</a></span>
+      </p>
+    </div>
+    <p class="mt-5 mb-3 text-muted text-center" style="color:white;">© 2019-2022</p>
+  </div>
+</div>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">

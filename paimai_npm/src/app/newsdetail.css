@@ -1,0 +1,185 @@
+ul.nav-tabs{
+    width: 140px;
+    margin-top: 20px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+}
+ul.nav-tabs li{
+    margin: 0;
+    border-top: 1px solid #ddd;
+}
+ul.nav-tabs li:first-child{
+    border-top: none;
+}
+ul.nav-tabs li a{
+    margin: 0;
+    padding: 8px 16px;
+    border-radius: 0;
+}
+ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover{
+    color: #fff;
+    background: #0088cc;
+    border: 1px solid #0088cc;
+}
+ul.nav-tabs li:first-child a{
+    border-radius: 4px 4px 0 0;
+}
+ul.nav-tabs li:last-child a{
+    border-radius: 0 0 4px 4px;
+}
+ul.nav-tabs.affix{
+    top: 30px; /* Set the top position of pinned element */
+}
+
+/* @media all and (min-width:992px) */
+.col-md-3 {
+	width: 25%;
+}
+.others {
+	padding-top: 60px;
+}
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+/* @media all and (min-width:768px) */
+.container {
+	width: 750px;
+}
+/* @media all and (min-width:992px) */
+.container {
+	width: 970px;
+}
+/* @media all and (min-width:1200px) */
+.container {
+	width: 1170px;
+}
+ul, li {
+	list-style: none;
+}
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+	margin: 0;
+	padding: 0;
+}
+body, button, input, select, textarea {
+	font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+}
+h1 {
+	margin: .67em 0;
+	font-size: 2em;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: inherit;
+}
+.h1, .h2, .h3, h1, h2, h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.h1, h1 {
+	font-size: 36px;
+}
+.others > div > h1 {
+	font-size: 20px;
+	color: #000;
+}
+hr {
+	height: 0px;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+hr {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: 0;
+	border-top: 1px solid #eee;
+}
+ul, ol {
+	list-style: none;
+}
+ol, ul {
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+ul, li {
+	list-style: none;
+}
+.others .relatedInfo .info {
+	height: 95px;
+	padding: 15px 0;
+	border-bottom: 1px solid #d9d9d9;
+	position: relative;
+}
+.others .relatedInfo .info .pic {
+	clear: left;
+	float: left;
+	width: 95px;
+	height: 75px;
+	margin-right: 15px;
+}
+.h2, h2 {
+	font-size: 30px;
+}
+.info h2 {
+	margin-top: 0px;
+}
+.others .relatedInfo .info h2 {
+	font-size: 12px;
+}
+.others .relatedInfo .info .date {
+	position: absolute;
+	bottom: 0px;
+	padding-bottom: 12px;
+	font-size: 12px;
+}
+img {
+	border: none;
+}
+fieldset, img {
+	border: 0;
+}
+img {
+	border: 0;
+}
+img {
+	vertical-align: middle;
+}
+img {
+	border: none;
+}
+.others .relatedInfo .info .date img {
+	vertical-align: bottom;
+	margin-right: 4px;
+}
+a {
+	text-decoration: none;
+}
+a {
+	text-decoration: none;
+}
+a {
+	background-color: transparent;
+}
+a {
+	color: #337ab7;
+	text-decoration: none;
+}
+a {
+	text-decoration: none;
+}
+.info h2 a {
+	color: #666;
+}
+.others .relatedInfo .info .pic img {
+	width: 95px;
+	height: 65px;
+}

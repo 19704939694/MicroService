@@ -1,0 +1,36 @@
+<myheader></myheader>
+<div class="box" style="border-top: none;"><div class="wrap"><div class="content clearfix"><div class="col_con col_con1">
+    <div class="con_title">
+        <h2 style="padding-top:20px">加入我们</h2>
+    </div>
+    <div class="hint">注：仔细填写下记申请者详细信息，申请结果将会在两个工作周内答复，请注意邮件查收！ </div>
+
+    <form id="form_job" action="/ashx/RecruiterMail.ashx" enctype="multipart/form-data" method="post" novalidate="novalidate">
+
+
+        <div class="clear"></div>
+        <input name="position" id="position" type="hidden">
+        <div class="form_list">
+            <ul>
+                <li class="clearfix"><span>姓　　名</span><input name="name" id="name" required="" type="text" maxlength="20" placeholder="请填写真实姓名"></li>
+                <li class="clearfix"><span>手 机 号</span><input name="phone" id="phone" required="" type="tel" placeholder="请填写有效手机号"></li>
+                <li class="clearfix"><span>邮　　箱</span><input name="email" id="email" required="" type="email" placeholder="请填写有效邮箱"></li>
+                <li class="clearfix"><span>应聘岗位</span><input name="name" id="name" required="" type="text" placeholder="请填写应聘岗位"></li>
+                <!--<li class="clearfix"><span>应聘岗位</span><input id="name" name="name" type="text" placeholder="分管会领导，中心主任，分管会领导" maxlength="20" required="" /></li>-->
+
+                <li class="clearfix last_li">
+                    <em></em> <a class="upload" href="javascript:void(0);">
+                        确认申请<input name="imgFile" id="imgFile" type="file">
+                    </a>
+                    <button name="submit" class="confirm" id="submit" onclick="return validationForm()" type="submit">
+                        全部清空
+                    </button>
+                </li>
+                <li class="clearfix" style="height: 25px; line-height: 25px;">
+                    <em></em>请仔细核实信息后提交！</li>
+                <li class="clearfix" id="lifile" style="height: 25px; line-height: 25px;"></li>
+            </ul>
+        </div>
+    </form>
+</div></div></div></div>
+<myfooter></myfooter>

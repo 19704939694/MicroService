@@ -1,0 +1,44 @@
+<!-- <infinitelist
+    [width]='"100%"' 
+    [height]='50' 
+    [data]='data' 
+    [itemSize]='50' 
+    [useob]='true'
+    (update)='update($event)'>
+        <div class="li-con" *ngFor="let item of event?.items; let i=index;" [ngStyle]="event.getStyle(i)">
+            item{{event.start + i}}
+        </div>
+</infinitelist> -->
+
+
+<!-- <div class="vl-con" style="overflow:hidden"> -->
+
+    <infinitelist
+
+    [width]='"100%"'
+
+    [height]='350'
+
+    [data]='data'
+
+    [scrollOffset]='scrollOffset'
+
+    [itemSize]='40'
+
+
+    [scrollToAlignment] = 'start'
+
+    [useob]='true'
+
+    (update)='update($event)'>
+
+        <div style="overflow:hidden" class="li-con" *ngFor="let item of event?.items; let i=index;" [ngStyle]="event.getStyle(i)">
+
+            <!-- 捐赠者{{event.start + i}} : {{item|json}} -->
+            捐赠者 : {{item.user}}&nbsp;&nbsp;物资：{{item.money}}&nbsp;&nbsp;赠言：{{item.msg}}
+
+        </div>
+
+    </infinitelist>
+
+<!-- </div> -->

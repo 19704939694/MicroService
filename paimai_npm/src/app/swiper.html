@@ -1,0 +1,12 @@
+<div class="swiper-container">
+    <ks-swiper-container [options]="swipeOptions">
+      <ks-swiper-slide *ngFor="let item of data">
+        <img src="../assets/picture/{{item}}.jpg">
+      </ks-swiper-slide>
+    </ks-swiper-container>
+    <button (click)="movePrev()">Prev</button>
+    <button (click)="moveNext()">Next</button>
+  </div>
+  <div class=".swiper-pagination"></div>
+  <button class="left-active" aria-label="Next slide"> </button>
+<button class="right-active" > </button>

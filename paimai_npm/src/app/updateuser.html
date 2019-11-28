@@ -1,0 +1,178 @@
+<div class="hidecontent" id="content2">
+    <div class="con_search">
+        <!-- <div class="search_ti">
+            
+        </div> -->
+        <div class="cha_search">
+            <!-- <div class="cha_search_tu" width="78" height="80">
+                <img width="78" height="80" src="/Templets/Hongjh/img/jiansuo_jing.png" border="0">
+            </div> -->
+            <div class="cha_search_form">
+                <div class="search_1" *ngIf="projectdata.length>1">
+                    <span class="search_zi">项目名称：</span> <span class="search_int">
+                                <select class="form-control" [(ngModel)]="projecttype">
+                                        <option *ngFor="let i of  projectdata;let n=index" [value]="i.name">{{i.name}}</option>
+                                    </select>
+                       
+                    </span>
+                </div>
+                <div class="search_2">
+                    <span class="search_zi">使用程度：</span> <span class="search_int">
+                        <select class="form-control" [(ngModel)]="userlevel">
+                            <option [value]="1">从未使用</option>
+                            <option [value]="2">几乎没有使用</option>
+                            <option [value]="3">很少使用</option>
+                            <option [value]="4">经常使用</option>
+                            <option [value]="5">一直使用</option>
+                        </select>
+                    </span>
+                </div>
+                <div class="search_2">
+                    <span class="search_zi">完好度：</span> <span class="search_int">
+                        <select class="form-control" [(ngModel)]="intact">
+                            <option [value]="1">90%以上</option>
+                            <option [value]="2">80%~90%</option>
+                            <option [value]="3">60%~80%</option>
+                            <option [value]="4">60%以下</option>
+                        </select>
+                    </span>
+                </div>
+                <div class="search_2">
+                    <span class="search_zi">保质期区间：</span> <span class="search_int">
+                        <select class="form-control" [(ngModel)]="qualitydate">
+                            <option [value]="1">15天</option>
+                            <option [value]="2">1个月</option>
+                            <option [value]="3">3个月</option>
+                            <option [value]="4">6个月</option>
+                            <option [value]="5">1年</option>
+                        </select>
+                    </span>
+                </div>
+                <div class="search_2">
+                        <span class="search_zi">处理状态：</span> <span class="search_int">
+                            <select class="form-control" [(ngModel)]="donatype">
+                                <option [value]="1">待收取</option>
+                                <option [value]="2">待审批</option>
+                                <option [value]="3">待处理</option>
+                                <option [value]="4">待送达</option>
+                                <option [value]="5">已送达</option>
+                            </select>
+                        </span>
+                    </div>
+                
+            </div>
+            <div class="cha_button">
+                <a style="color: white;" class="searchBg" (click)="postData()">开始查询
+                </a>
+                <a style="color: white;margin-left:15px" class="searchBg" (click)="updatePost()">保存变更
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+    <div class="con_table" id="div_list">
+        <table width="100%" class="ztable" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr id="con_tr">
+                    <td width="150" align="center"><span class="STYLE3">项目名称</span></td>
+                    <td width="80" align="center"><span class="STYLE3">捐赠人</span></td>
+                    <td width="120" align="center"><span class="STYLE3">邮件</span></td>
+                    <td width="150" align="center"><span class="STYLE3">取件地址</span></td>
+                    <td width="100" align="center"><span class="STYLE3">物资</span></td>
+                    <td width="100" align="center"><span class="STYLE3">使用程度</span></td>
+                    <td width="100" align="center"><span class="STYLE3">完好度</span></td>
+                    <td width="100" align="center"><span class="STYLE3">生产日期</span></td>
+                    <td width="100" align="center"><span class="STYLE3">保质期区间</span></td>
+                    <td width="100" align="center"><span class="STYLE3">详细保质期</span></td>
+                    <td width="100" align="center"><span class="STYLE3">援赠时间</span></td>
+                    <td width="150" align="center"><span class="STYLE3">捐赠状态</span></td>
+                </tr>
+            </tbody>
+            <tbody id="dataTbody">
+                <!-- <tr style="background-color: white;">
+                    <td title="天使阳光基金" align="left">&nbsp;天使阳光基金</td>
+                    <td title="齐*豪" align="left">&nbsp;齐*豪</td>
+                    <td title="山东省淄博市临淄区" align="left">&nbsp;123@qq.com</td>
+                    <td title="国家彩票公益金" align="left">&nbsp;北京朝阳</td>
+                    <td align="left">&nbsp;12345612</td>
+                    <td align="left">&nbsp;大米两袋</td>
+                    <td align="left">&nbsp;</td>
+                    <td title="天使阳光基金" align="left">&nbsp;</td>
+                    <td title="齐*豪" align="left">&nbsp;20191110</td>
+                    <td title="山东省淄博市临淄区" align="left">&nbsp;一年以上</td>
+                    <td title="国家彩票公益金" align="left">&nbsp;一年</td>
+                    <td align="left">&nbsp;20191111</td>
+                    <td align="left"><select class="form-control" [(ngModel)]="projecttype">
+                            <option [value]="1">15天</option>
+                            <option [value]="2">1个月</option>
+                            <option [value]="3">3个月</option>
+                            <option [value]="4">6个月</option>
+                            <option [value]="5">1年</option>
+                        </select></td>
+                </tr> -->
+                <tr *ngFor="let i of  donaterdata;let n=index" style="background-color: white;">
+                    <td title="天使阳光基金" align="left">&nbsp;{{i.projecttype}}</td>
+                    <td title="齐*豪" align="left">&nbsp;{{i.donor}}</td>
+                    <td title="山东省淄博市临淄区" align="left">&nbsp;{{i.email}}</td>
+                    <td title="国家彩票公益金" align="left">&nbsp;{{i.address}}</td>
+                    <td align="left">&nbsp;{{i.describ}}</td>
+
+                    <td align="left" *ngIf="i.userlevel ==='1'">&nbsp;从未使用</td>
+                    <td align="left" *ngIf="i.userlevel ==='2'">&nbsp;几乎没有使用</td>
+                    <td align="left" *ngIf="i.userlevel ==='3'">&nbsp;很少使用</td>
+                    <td align="left" *ngIf="i.userlevel ==='4'">&nbsp;经常使用</td>
+                    <td align="left" *ngIf="i.userlevel ==='5'">&nbsp;一直使用</td>
+                    <td align="left" *ngIf="i.userlevel ===''||i.userlevel ===null">&nbsp;</td>
+
+                    <td align="left" *ngIf="i.intact ==='1'">&nbsp;90%以上</td>
+                    <td align="left" *ngIf="i.intact ==='2'">&nbsp;80%~90%</td>
+                    <td align="left" *ngIf="i.intact ==='3'">&nbsp;60%~80%</td>
+                    <td align="left" *ngIf="i.intact ==='4'">&nbsp;60%以下</td>
+                    <td align="left" *ngIf="i.intact ===''||i.intact ===null">&nbsp;</td>
+                    
+                    <td align="left">&nbsp;{{i.postdate}}</td>
+                    <td align="left" *ngIf="i.qualitydate ==='1'">&nbsp;15天</td>
+                    <td align="left" *ngIf="i.qualitydate ==='2'">&nbsp;1个月</td>
+                    <td align="left" *ngIf="i.qualitydate ==='3'">&nbsp;3个月</td>
+                    <td align="left" *ngIf="i.qualitydate ==='4'">&nbsp;6个月</td>
+                    <td align="left" *ngIf="i.qualitydate ==='5'">&nbsp;1年</td>
+                    <td align="left" *ngIf="i.qualitydate ===''">&nbsp;</td>
+                    <td align="left">&nbsp;{{i.qualitydetail}}</td>
+                    <td align="left">&nbsp;{{i.donordate}}</td>
+
+                    <td align="center">&nbsp;
+                        <select class="form-control" [ngModel]="i.donatype" (ngModelChange)="i.donatype=$event;i.ischanged = true">
+                            <option [value]="0">待收取</option>
+                            <option [value]="1">待审批</option>
+                            <option [value]="2">待处理</option>
+                            <option [value]="3">待送达</option>
+                            <option [value]="4">已送达</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td class="con_fen" colspan="15">
+                        <div class="pagenb" style="width: 100%; padding-left: 30%;">
+                            <ul class="pagination ">
+                                <li><a href="javascript:void(0);">上一页</a></li>
+                                <li class="active"><a>1</a></li>
+                                <li><a href="javascript:GetSearchList('2');">2</a></li>
+                                <li><a href="javascript:GetSearchList('3');">3</a></li>
+                                <li><a href="javascript:GetSearchList('4');">4</a></li>
+                                <li><a href="javascript:GetSearchList('5');">5</a></li>
+                                <li><a>...</a></li>
+                                <li><a href="javascript:GetSearchList('6497');">6497</a></li>
+                                <li><a href="javascript:GetSearchList('2');">下一页</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="clear">
+    </div>
+</div>

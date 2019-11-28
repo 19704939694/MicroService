@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: eureka_provider_login
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: guowei
+Implementation-Vendor-Id: com.ibm.jiuzai
+Build-Jdk: 1.8.0_202
+Implementation-URL: http://projects.spring.io/spring-boot/eureka_provi
+ der_login/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

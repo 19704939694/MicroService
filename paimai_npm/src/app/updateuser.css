@@ -1,0 +1,324 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color: #666;
+}
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+	font-size: 14px;
+}
+#content2 {
+	width: 100%;
+	/* height: 700px; */
+	margin: 30px auto;
+}
+body {
+	margin: 0;
+}
+body {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 1.4285;
+	color: #333;
+	background-color: #fff;
+}
+html {
+	font-family: sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+html {
+	font-size: 10px;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+#content2 .con_search {
+	width: 100%;
+	padding: 10px;
+}
+.clear {
+	clear: both;
+}
+.clear {
+	clear: both;
+}
+#content2 .con_table {
+	width: 100%;
+	margin-top: 10px;
+}
+table {
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table {
+	background-color: transparent;
+}
+#content2 .ztable {
+	border-top: #ffdfdf 1px solid;
+	border-left: #ffdfdf 1px solid;
+	width: 100%;
+}
+td, th {
+	padding: 0;
+}
+#content2 td {
+	border-bottom: #ffdfdf 1px solid;
+	border-right: #ffdfdf 1px solid;
+	color: #666;
+	padding: 0px 2px 0px 2px;
+	height: 29px;
+}
+.pagenb {
+	width: 350px;
+	margin: 0 auto;
+}
+ol, ul {
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+ul, li {
+	list-style: none;
+}
+ul, li {
+	list-style: none;
+}
+.pagination {
+	display: inline-block;
+	padding-left: 0px;
+	margin: 20px 0;
+	border-radius: 4px;
+}
+.active {
+	background: #EC1C24;
+	color: #fff !important;
+}
+.pagination > li {
+	display: inline;
+}
+a {
+	background-color: transparent;
+}
+a {
+	color: #337ab7;
+	text-decoration: none;
+}
+a {
+	text-decoration: none;
+}
+a {
+	text-decoration: none;
+}
+.pagination > li > a, .pagination > li > span {
+	position: relative;
+	float: left;
+	padding: 6px 12px;
+	margin-left: -1px;
+	line-height: 1.4285;
+	color: #337ab7;
+	text-decoration: none;
+	background-color: #fff;
+	border: 1px solid #ddd;
+}
+.pagenb li a {
+	color: #666;
+	margin-right: 5px;
+}
+.pagination > li:last-child > a, .pagination > li:last-child > span {
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+	z-index: 3;
+	color: #fff;
+	cursor: default;
+	background-color: #337ab7;
+	border-color: #337ab7;
+}
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+	background: #D71518;
+	color: #fff !important;
+	border-color: #d71518;
+}
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+	margin-left: 0px;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+#content2 #con_tr {
+	background: #fff9f9;
+	color: #f93;
+	font-weight: bold;
+}
+#content2 .search_ti {
+	font-size: 15px;
+	font-weight: bold;
+	color: #000;
+	margin-left: 10px;
+}
+#content2 .cha_search .cha_search_tu {
+	float: left;
+	display: inline;
+	width: 78px;
+}
+#content2 .cha_search .cha_search_form {
+	float: left;
+	display: inline;
+	width: 1050px;
+}
+
+#content2 .cha_button {
+	margin: 25px 20px 0 0;
+	/* float: right; */
+	display: inline;
+}
+.searchBg {
+	background-color: #d71518;
+	margin-top: 8px;
+	color: #fff;
+	line-height: 30px;
+	border-radius: 4px;
+	width: 90px;
+	height: 30px;
+	color: #fff;
+	border: 0;
+	cursor: pointer;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+}
+#content2 .cha_search .search_1 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #f93;
+	float: left;
+	display: inline;
+	margin: 10px 0 0 0;
+	_margin: 10px 1px 0 0;
+}
+#content2 .cha_search .search_2 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #f93;
+	float: left;
+	display: inline;
+	margin: 10px 0 0 20px;
+}
+#content2 .cha_search .search_2 {
+	color: #d71518;
+}
+#content2 .cha_search .search_3 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #f93;
+	float: left;
+	display: inline;
+	margin-top: 15px;
+}
+#content2 .cha_search .search_4 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #f93;
+	float: left;
+	display: inline;
+	margin: 15px 0 0 20px;
+}
+#content2 .search_zi {
+	float: left;
+	display: inline;
+	line-height: 30px;
+	_margin-top: 3px;
+	color: #d71518;
+}
+#content2 .search_int {
+	float: left;
+	display: inline;
+	height: 36px;
+}
+button, input, optgroup, select, textarea {
+	margin: 0;
+	font: inherit;
+	color: inherit;
+}
+button, select {
+	text-transform: none;
+}
+input {
+	line-height: normal;
+}
+button, input, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+.form-control {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.4285;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.search_int select option {
+	font-size: 14px;
+}
+textarea, input[type='text'], input[type='password'], input[type='datetime'], input[type='datetime-local'], input[type='date'], input[type='month'], input[type='time'], input[type='week'], input[type='number'], input[type='email'], input[type='url'], input[type='search'], input[type='tel'], input[type='color'], .uneditable-input {
+	box-sizing: border-box;
+	border: 1px solid #d2d2d2;
+	color: #3d3d3d;
+	display: inline-block;
+	font-size: 12px;
+	font-weight: 400;
+	height: 35px;
+	line-height: 20px;
+	outline: none;
+	padding: 4px 6px;
+	vertical-align: middle;
+}
+#content2 .cha_search .j_int2 {
+	border-top: #ccc 1px solid;
+	border-left: #ccc 1px solid;
+	border-bottom: #bebebe 1px solid;
+	border-right: #bebebe 1px solid;
+	width: 130px;
+	height: 30px;
+	line-height: 30px;
+}
+#content2 .cha_search .j_int {
+	border-top: #ccc 1px solid;
+	border-left: #ccc 1px solid;
+	border-bottom: #bebebe 1px solid;
+	border-right: #bebebe 1px solid;
+	width: 126px;
+	height: 30px;
+	line-height: 30px;
+}
+img {
+	border: 0;
+}
+img {
+	vertical-align: middle;
+}
+img {
+	border: none;
+}
+img {
+	border: none;
+}

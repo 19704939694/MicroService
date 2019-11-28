@@ -1,0 +1,11 @@
+<div class="container">
+<div class="show" (mouseenter)="stopPlay()" (mouseleave)="autoPlay()">
+    <span (click)="playPre()"></span>
+    <ul [@carousel] = 'state' (@carousel.done)="afterPlay()" style="display: block">
+      <li *ngFor="let img of bannerPic"><img width="300" height="300" style="height: 600px;display: inline-block;float:left;"
+            src="{{img.img}}"
+            data-src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.3/dist/img/expo.png"></li>
+    </ul>
+    <span (click)="playNext()"></span>
+  </div>
+</div>

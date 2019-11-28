@@ -1,0 +1,270 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: Microsoft YaHei;
+	font-size: 12px;
+}
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+	white-space: normal;
+	font-size: 14px;
+}
+.col_con {
+	width: 729px;
+	float: left;
+	background: #f7f7f7;
+	margin-top: 30px;
+	padding: 0 0 40px 10px;
+	margin-bottom: 100px;
+}
+ul, li {
+	list-style: none;
+}
+ul li {
+	list-style: none;
+}
+.content {
+	margin: 0 auto;
+}
+.wrap {
+	width: 984px;
+	margin: 4px auto 0 auto;
+	padding: 0 10px;
+}
+.box {
+	border-top: 2px solid #e12d2e;
+}
+body {
+	font-size: 14px;
+	color: #666;
+}
+html {
+	-webkit-text-size-adjust: none;
+	font-size: 62.5%;
+}
+.col_con .con_title {
+	height: 70px;
+	border-bottom: 1px solid #ebebeb;
+	line-height: 70px;
+}
+.hint {
+	height: 63px;
+	line-height: 63px;
+	border-bottom: 1px solid #ebebeb;
+}
+.clear {
+	zoom: 1;
+}
+.clear {
+	width: 0px;
+	height: 0px;
+	margin: 0;
+	padding: 0;
+	font-size: 0px;
+	line-height: 0;
+	clear: both;
+}
+.clear {
+	clear: both;
+}
+input {
+	border: 0;
+	outline: none;
+}
+.clearfix input {
+	border: 1px solid #ddd;
+}
+.form_list ul {
+	padding-top: 34px;
+}
+.form_list ul li {
+	height: 37px;
+	line-height: 37px;
+	margin-bottom: 23px;
+	display: block;
+}
+.form_list li.selected_job {
+	border: 1px solid #f7f7f7;
+}
+i, em {
+	font-style: normal;
+}
+.form_list ul li span, .form_list ul li em {
+	color: #333333;
+	font-size: 14px;
+	width: 66px;
+	text-align: right;
+	display: inline-block;
+	margin-right: 23px;
+}
+.form_list ul li.last_li em {
+	float: left;
+}
+a {
+	text-decoration: none;
+}
+a {
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
+}
+.form_list ul li a {
+	width: 134px;
+	height: 40px;
+	display: inline-block;
+	text-align: center;
+	font-size: 14px;
+	color: #fff;
+	line-height: 40px;
+}
+.form_list ul li a.upload {
+	background: #ff8a00;
+	position: relative;
+}
+.form_list ul li.last_li .upload {
+	float: left;
+}
+.form_list ul li .confirm {
+	width: 134px;
+	height: 40px;
+	display: inline-block;
+	text-align: center;
+	font-size: 14px;
+	color: #fff;
+	line-height: 40px;
+	background: #e11b1c;
+	margin-left: 45px;
+	position: relative;
+	border: none;
+}
+.form_list ul li.last_li .confirm {
+	float: left;
+}
+img {
+	border: 0 none;
+}
+img {
+	border: none;
+}
+.form_list ul li .confirm img {
+	margin-right: 5px;
+	vertical-align: middle;
+}
+.form_list ul li a img {
+	margin-right: 5px;
+	vertical-align: middle;
+}
+.form_list ul li a.upload input[type=file] {
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	height: 40px;
+}
+.form_list ul li span {
+	float: left;
+}
+.form_list ul li input[type=text], .form_list ul li input[type=tel], .form_list ul li input[type=email] {
+	height: 35px;
+	width: 230px;
+	text-indent: 5px;
+	float: left;
+	line-height: 35px;
+}
+.job > li {
+	cursor: pointer;
+	width: 100%;
+	display: block;
+	float: left;
+}
+.job > li.dual {
+	background: #fff;
+}
+.job > li dl {
+	height: 63px;
+	color: #666666;
+	font-size: 14px;
+	border-bottom: 1px solid #ebebeb;
+}
+.sub_text {
+	padding: 30px 10px;
+	display: none;
+}
+.sub_text p {
+	font-size: 14px;
+	color: #666666;
+	line-height: 32px;
+}
+.sub_text p {
+	line-height: 25px;
+}
+dd, dt, dd {
+	color: #666;
+}
+.job > li dl dd.til {
+	width: 386px;
+	float: left;
+	line-height: 63px;
+}
+.job > li dl dd.city {
+	width: 153px;
+	float: left;
+	line-height: 63px;
+}
+.job > li dl dd.num {
+	width: 153px;
+	float: left;
+	line-height: 63px;
+}
+.job > li dl dd.icon {
+	width: 37px;
+	height: 63px;
+	float: right;
+}
+.job > li dl dd.icon em {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	/* background: url(/Templets/Special/joinUs/images/aboutus_icon3.png) no-repeat; */
+	margin: 20px 17px 0 0;
+}
+.job > li input[type=checkbox] {
+	margin: 0 15px 0 10px;
+}
+.job > li dl dd.til input {
+	width: 0px;
+	height: 0px;
+	margin: 0px;
+	padding: 0px;
+	display: none;
+}
+label.checkbox {
+	padding-left: 18px;
+	margin: 0 12px;
+	/* background: url(../images/about_check1.png) left center no-repeat; */
+	cursor: pointer;
+	display: inline-block;
+	height: 18px;
+	vertical-align: text-bottom;
+}
+.col_con .con_title img {
+	display: inline-block;
+	/* *display:inline: ;
+	*zoom:1: ; */
+	border: none;
+	vertical-align: middle;
+}
+.col_con .con_title h2 {
+	display: inline-block;
+	/* *display:inline: ;
+	*zoom:1: ; */
+	height: 70px;
+	vertical-align: middle;
+	padding-left: 16px;
+	font-size: 20px;
+	color: #e11b1c;
+	font-weight: normal;
+}

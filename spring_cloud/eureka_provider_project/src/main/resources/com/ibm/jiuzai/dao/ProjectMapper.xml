@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.ibm.jiuzai.dao.ProjectDao" >
+    <resultMap id="BaseResultMap" type="com.ibm.jiuzai.entity.Project" >
+        <result column="index" property="index" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="contest" property="contest" jdbcType="VARCHAR" />
+        <result column="number" property="number" jdbcType="BIGINT" />
+        <result column="money" property="money" jdbcType="DECIMAL" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+        juan_project.index, juan_project.name, contest, number, money
+    </sql>
+    <select id="selectAllProject" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from juan_project
+    </select>
+</mapper>

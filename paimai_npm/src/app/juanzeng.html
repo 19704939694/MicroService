@@ -1,0 +1,670 @@
+<myheader></myheader>
+<div class="main_box" style="background: none;">
+    <div class="box">
+        <div class="middle">
+            <div class="left">
+                <ul>
+                    <li class="menu_selected"><a title="捐款方式" href="/donations/PayLove.aspx">捐助方式</a> </li>
+                    <div class="jkfs">
+                        <p>
+                            <a title="在线捐款" class="color" href="#zxjk">在线捐赠</a></p>
+                        <p>
+                            <a title="银行汇款" href="#yhhk">银行汇款</a></p>
+                        <p>
+                            <a title="短信捐款" href="#dxjk">短信捐款</a></p>
+                        <p>
+                            <a title="邮局汇款" href="#yjhk">邮局汇款</a></p>
+                        <p>
+                            <a title="POS机捐款" href="#posjjk">POS机捐款</a></p>
+                        <p>
+                            <a title="现场捐款" href="#xcjk">现场捐款</a></p>
+                    </div>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="jsxq" style="padding-top: 22px;">
+                    <p class="bt">
+                        捐助须知</p>
+                    <p class="zw">
+                        根据中国红十字基金会的管理规则，捐赠者可以任意选定所参加的公益项目。中国红十字基金会根据捐赠者的意愿，负责公益项目的实施和管理，并按该公益项目的
+                        实施管理规则，将相关信息反馈给捐赠者。中国红十字基金会收到捐款后，将开具捐款收据，并按所填写地址将捐款收据寄回至捐赠者。中国红十字基金会负责有关网上捐赠活动的解释。<br>如有疑问，欢迎致电了解捐款详情：010-85594818/85594816/85594811。
+                    </p>
+                    <a name="zxjk"></a>
+                    <p class="zxjk">
+                        在线捐助</p>
+                    <div class="zffs">
+
+                        <div id="more_info_sheets_a">
+                            <div id="idTab1" style="margin-top: 0">
+                                <ul class="nav nav-tabs nav-justified">
+                                    <li [class.active]="flag1" (click)="setFalg1True()"><a>捐款</a></li>
+                                    <li [class.active]="flag2" (click)="setFalg2True()"><a>捐物</a></li>
+                                </ul>
+                                <div class="pay_1" *ngIf="flag1">
+                                    <div class="pay_title">
+                                        请正确填写捐款人信息。标注"*"为必须填写的项目。您选择的支付方式为 <span id="spnZF"
+                                            style="color: #ed1b24; font-weight: bold;">支付宝</span>支付。</div>
+                                </div>
+                                <div class="pay_1" *ngIf="flag2">
+                                    <div class="pay_title">
+                                        请正确填写捐款人信息。标注"*"为必须填写的项目。请填写 <span id="spnZFthree"
+                                            style="color: #ed1b24; font-weight: bold;">详细地址和联系方式</span>以便于我们的工作人员上门取货。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="flag2" class="jk_tankuang_midd">
+                            <div class="pay_con1">
+                                <table width="632" class="pay_table" id="tabInput" border="0" cellspacing="0"
+                                    cellpadding="0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="125" height="41" class="pay_td" valign="middle"
+                                                bgcolor="#f3f3f2">
+                                                捐赠项目（*）：
+                                            </td>
+                                            <td width="507" height="41" id="tdCategory" valign="middle"
+                                                style="padding-left: 14px;" bgcolor="#f3f3f2">
+                                                <div class="index_search_con" style="width:300px;">
+                                                    <div class="index_search_r">
+                                                        <div class="input-group">
+                                                            <!-- <input type="text" class="form-control" readonly
+                                                                unselectable="on" value="test"> -->
+                                                                <select class="form-control" [(ngModel)]="projecttype">
+                                                                    <option *ngFor="let i of  projectdata;let n=index" [value]="i.name">{{i.name}}</option>
+                                                                </select>
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default" type="button">
+                                                                    查看更多>>
+                                                                </button>
+                                                            </span>
+                                                        </div><!-- /input-group -->
+                                                    </div>
+                                                    <div class="index_list" id="keytext"
+                                                        style="background: rgb(255, 255, 255); left: 573px; top: 488px; width: 213px; height: 130px; overflow: scroll; display: none; overflow-x: hidden;">
+                                                    </div>
+                                                </div>
+                                                &nbsp;
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="125" height="41" class="pay_td" valign="middle">
+                                                物资类型：
+                                            </td>
+                                            <td width="125" height="41" class="pay_td" valign="middle">
+                                                <input name="radIsWuName" id="radIsDisNameYes" type="radio"
+                                                    [(ngModel)]="resource_type" (change)="resource_type=2"
+                                                    [checked]="resource_type ===2"
+                                                    [value]="2">&nbsp;衣物&nbsp;&nbsp;&nbsp;&nbsp;<input
+                                                    name="radIsWuName" id="radIsDisNameNo" type="radio"
+                                                    [(ngModel)]="resource_type" (change)="resource_type=1"
+                                                    [checked]="resource_type ===1" [value]="1">&nbsp;食品
+                                                &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="radIsWuName"
+                                                    id="radIsDisNameNo" [(ngModel)]="resource_type"
+                                                    (change)="resource_type=3" [checked]="resource_type ===3"
+                                                    [value]="3">&nbsp;其他
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td width="125" height="41" class="pay_td" valign="middle">
+                                                详细描述：
+                                            </td>
+                                            <td width="507" height="41" valign="middle" style="padding-left: 14px;">
+                                                <textarea name="txtRemark" class="pay_int02" id="txtRemark"
+                                                    style="width: 446px;" rows="2" cols="45" [(ngModel)]="describe"
+                                                    placeholder="例：xx牌xxl外套5件;"></textarea>
+                                            </td>
+                                        </tr>
+                                        <tr *ngIf="resource_type >1">
+                                            <td width="125" height="41" class="pay_td" valign="middle">
+                                                使用程度：
+                                            </td>
+                                            <td width="507" height="41" valign="middle" style="padding-left: 14px;">
+                                                <input name="usePost" id="radIsPostYes" type="radio"
+                                                [(ngModel)]="userlevel" (change)="userlevel=1"
+                                                [checked]="userlevel ===1"
+                                                [value]="1">;&nbsp;从未使用&nbsp;&nbsp;&nbsp;&nbsp;<input name="usePost"
+                                                    id="radIsPostNo" type="radio"  [(ngModel)]="userlevel" (change)="userlevel=2"
+                                                    [checked]="userlevel ===2"
+                                                    [value]="2">;&nbsp;几乎没有使用
+                                                &nbsp;&nbsp;&nbsp;&nbsp;<input name="usePost" id="radIsPostNo"
+                                                    type="radio"  [(ngModel)]="userlevel" (change)="userlevel=3"
+                                                    [checked]="userlevel ===3"
+                                                    [value]="3">;&nbsp;很少使用
+                                                &nbsp;&nbsp;&nbsp;&nbsp;<input name="usePost" id="radIsPostNo"
+                                                    type="radio" checked="checked"  [(ngModel)]="userlevel" (change)="userlevel=4"
+                                                    [checked]="userlevel ===4"
+                                                    [value]="4">;&nbsp;经常使用
+                                                &nbsp;&nbsp;&nbsp;&nbsp;<input name="usePost" id="radIsPostNo"
+                                                    type="radio"  [(ngModel)]="userlevel" (change)="userlevel=5"
+                                                    [checked]="userlevel ===5"
+                                                    [value]="5">;&nbsp;一直使用
+                                            </td>
+                                        </tr>
+                                        <tr *ngIf="resource_type >1">
+                                            <td width="125" height="41" class="pay_td" valign="middle">
+                                                完好度：
+                                            </td>
+                                            <td width="507" height="41" valign="middle" style="padding-left: 14px;">
+                                                <input name="keepPost" type="radio"  [(ngModel)]="intact" (change)="intact=1"
+                                                [checked]="intact ===1"
+                                                [value]="1">;&nbsp;90%以上
+                                                &nbsp;&nbsp;&nbsp;&nbsp;<input name="keepPost" type="radio"
+                                                [(ngModel)]="intact" (change)="intact=2"
+                                                [checked]="intact ===2"
+                                                [value]="2">;&nbsp;80%~90%
+                                                &nbsp;&nbsp;&nbsp;&nbsp;<input name="keepPost" type="radio"
+                                                    checked="checked" [(ngModel)]="intact" (change)="intact=3"
+                                                    [checked]="intact ===3"
+                                                    [value]="3">;&nbsp;60%~80%
+                                                &nbsp;&nbsp;&nbsp;&nbsp;<input name="keepPost" type="radio"
+                                                [(ngModel)]="intact" (change)="intact=4"
+                                                [checked]="intact ===4"
+                                                [value]="4">;&nbsp;60%以下
+                                            </td>
+                                        </tr>
+                                        <tr *ngIf="resource_type ===1">
+                                            <td width="125" height="41" class="pay_td" valign="middle">
+                                                生产日期：
+                                            </td>
+                                            <td width="507" height="41" valign="middle" style="width: 208px;"
+                                                style="padding-left: 14px;">
+                                                <angular2-date-picker [(ngModel)]="date" [settings]="settings">
+                                                </angular2-date-picker>
+                                            </td>
+                                        </tr>
+                                        <tr *ngIf="resource_type ===1">
+                                            <td width="125" height="41" class="pay_td" valign="middle">
+                                                保质期区间：
+                                            </td>
+                                            <td width="507" height="41" valign="middle" style="padding-left: 14px;">
+                                                <input name="keeptimePost" type="radio" [(ngModel)]="qualitydate" (change)="qualitydate=1"
+                                                [checked]="qualitydate ===1"
+                                                [value]="1">;&nbsp;15天
+                                                &nbsp;&nbsp;&nbsp;&nbsp;<input name="keeptimePost" type="radio"
+                                                [(ngModel)]="qualitydate" (change)="qualitydate=2"
+                                                [checked]="qualitydate ===2"
+                                                [value]="2">;&nbsp;1个月
+                                                &nbsp;&nbsp;&nbsp;&nbsp;<input name="keeptimePost" type="radio"
+                                                    checked="checked" [(ngModel)]="qualitydate" (change)="qualitydate=3"
+                                                    [checked]="qualitydate ===3"
+                                                    [value]="3">;&nbsp;3个月
+                                                &nbsp;&nbsp;&nbsp;&nbsp;<input name="keeptimePost" type="radio"
+                                                [(ngModel)]="qualitydate" (change)="qualitydate=4"
+                                                [checked]="qualitydate ===4"
+                                                [value]="4">;&nbsp;6个月
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;<input name="keeptimePost" type="radio"
+                                                    [(ngModel)]="qualitydate" (change)="qualitydate=5"
+                                                [checked]="qualitydate ===5"
+                                                [value]="5">;&nbsp;1年
+                                            </td>
+                                        </tr>
+                                        <tr *ngIf="resource_type ===1">
+                                            <td width="125" height="41" class="pay_td" valign="middle">
+                                                详细保质期：
+                                            </td>
+                                            <td width="507" height="41" valign="middle" style="padding-left: 14px;">
+                                                <input name="txtEmail" class="pay_int003" id="txtEmail" [(ngModel)]="qualitydetail"
+                                                    style="width: 208px;" type="text">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="125" height="41" class="pay_td" valign="middle">
+                                                电子邮箱：
+                                            </td>
+                                            <td height="41" valign="middle" style="padding-left: 14px;">
+                                                <input name="txtEmail" class="pay_int003" id="txtEmail" [(ngModel)]="email"
+                                                    style="width: 208px;" type="text">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="125" height="41" class="pay_td" valign="middle"
+                                                bgcolor="#f3f3f2">
+                                                捐赠人：
+                                            </td>
+                                            <td width="507" height="41" valign="middle" style="padding-left: 14px;"
+                                                bgcolor="#f3f3f2">
+                                                <input name="txtName" class="pay_int3" id="txtName" [(ngModel)]="donor"
+                                                    style="width: 208px;" type="text">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="125" height="41" class="pay_td" valign="middle"
+                                                bgcolor="#f3f3f2">
+                                                身份证号：
+                                            </td>
+                                            <td width="507" height="41" valign="middle" style="padding-left: 14px;"
+                                                bgcolor="#f3f3f2">
+                                                <input name="txtName" class="pay_int3" id="txtName" [(ngModel)]="identity"
+                                                    style="width: 208px;" type="text">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="125" height="41" class="pay_td" valign="middle">
+                                                是否显示姓名：
+                                            </td>
+                                            <td width="507" height="41" valign="middle" style="padding-left: 14px;">
+                                                <input name="radIsDisName" id="radIsDisNameYes" type="radio"
+                                                    checked="checked" value="是">&nbsp;是&nbsp;&nbsp;&nbsp;&nbsp;<input
+                                                    name="radIsDisName" id="radIsDisNameNo" type="radio" value="否">&nbsp;否
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="125" height="41" class="pay_td" valign="middle"
+                                                bgcolor="#f3f3f2">
+                                                是否邮寄收据：
+                                            </td>
+                                            <td width="507" height="41" valign="middle" style="padding-left: 14px;"
+                                                bgcolor="#f3f3f2">
+                                                <input name="radIsPost" id="radIsPostYes" type="radio"
+                                                    value="是">&nbsp;是&nbsp;&nbsp;&nbsp;&nbsp;<input name="radIsPost"
+                                                    id="radIsPostNo" type="radio" checked="checked" value="否">&nbsp;否
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="125" height="41" class="pay_td" valign="middle"
+                                                bgcolor="#f3f3f2">
+                                                通讯地址：
+                                            </td>
+                                            <td width="507" height="41" valign="middle" style="padding-left: 14px;"
+                                                bgcolor="#f3f3f2">
+                                                <input name="txtName" class="pay_int3" id="txtName" [(ngModel)]="address"
+                                                    style="width: 208px;" type="text" placeholder="请填写详细通讯地址">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="125" height="41" class="pay_td" valign="middle"
+                                                bgcolor="#f3f3f2">
+                                                联系方式：
+                                            </td>
+                                            <td width="507" height="41" valign="middle" style="padding-left: 14px;"
+                                                bgcolor="#f3f3f2">
+                                                <input name="txtName" class="pay_int3" id="txtName" [(ngModel)]="contact"
+                                                    style="width: 208px;" type="text" placeholder="手机，家庭电话等">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="125" height="41" class="pay_td" valign="middle">
+                                                捐赠留言：
+                                            </td>
+                                            <td width="507" height="41" valign="middle" style="padding-left: 14px;">
+                                                <textarea name="txtRemark" class="pay_int02" id="txtRemark" [(ngModel)]="message"
+                                                    style="width: 446px;" rows="2" cols="45"></textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="int_ts" id="divMessage" style="width:335px;">
+                                </div>
+                                <div class="pay_but">
+                                    <button width="120" height="32" type="button" border="0"
+                                        style="cursor: pointer;float: left;" class="btn btn-primary" (click)="postData()">确认捐赠</button>
+                                    <button width="120" height="32" type="button" border="0" style="cursor: pointer;"
+                                        class="btn btn-primary">取消填写</button>
+                                    <input id="hid_sub" type="hidden" value="1">
+                                </div>
+                            </div>
+                            <div class="clear">
+                            </div>
+                        </div>
+                        <!-- <juanmoney></juanmoney> -->
+                        <div *ngIf="flag1" class="jk_tankuang_midd">
+                            <div class="pay_con1">
+                                <div class="donoCode" style="position: absolute; margin: 47px 0 0 510px;"><img
+                                        width="110" src="/Templets/static/images/zfbewm.png"></div>
+                                <table width="632" class="pay_table" id="tabInput" border="0" cellspacing="0"
+                                    cellpadding="0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="125" height="41" class="pay_td" valign="middle"
+                                                bgcolor="#f3f3f2">
+                                                捐赠项目（*）：
+                                            </td>
+                                            <td width="507" height="41" id="tdCategory" valign="middle"
+                                                style="padding-left: 14px;" bgcolor="#f3f3f2">
+                                                <div class="index_search_con" style="width:300px;">
+                                                    <div class="index_search_r">
+                                                        <div class="input-group">
+                                                            <select class="form-control" [(ngModel)]="projecttype">
+                                                                <option *ngFor="let i of  projectdata;let n=index" [value]="i.name">{{i.name}}</option>
+                                                            </select>
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default" type="button">
+                                                                    查看更多>>
+                                                                </button>
+                                                            </span>
+                                                        </div><!-- /input-group -->
+                                                    </div>
+                                                    <div class="index_list" id="keytext"
+                                                        style="background: rgb(255, 255, 255); left: 573px; top: 488px; width: 213px; height: 130px; overflow: scroll; display: none; overflow-x: hidden;">
+                                                    </div>
+                                                </div>
+                                                &nbsp;
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="125" height="41" class="pay_td" valign="middle">
+                                                金额（*）：
+                                            </td>
+                                            <td width="507" height="41" valign="middle" style="padding-left: 14px;">
+                                                <ul class="step1">
+                                                    <li class="min">
+                                                        <div class="container containerh">
+                                                            <div>
+                                                                <strong>
+                                                                    <label for="#">
+                                                                        <input name="moneyLove" id="five" type="radio" [(ngModel)]="moneytype" (change)="moneytype=1"
+                                                                        [checked]="moneytype ===1"
+                                                                        [value]="1">
+                                                                    </label>
+                                                                </strong>
+                                                                <div style="text-align: center;">
+                                                                    <h3 style="color:red;padding-top:5px;">
+                                                                        50元</h3>
+                                                                </div>
+                                                                <!--<p>
+                                                                                为一名义务教育阶段学生提供一学期的学习生活补助。</p>-->
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="min">
+                                                        <div class="container containerh">
+                                                            <div>
+                                                                <strong>
+                                                                    <label for="#">
+                                                                        <input name="moneyLove" id="ten" type="radio" [(ngModel)]="moneytype" (change)="moneytype=2"
+                                                                        [checked]="moneytype ===2"
+                                                                        [value]="2">
+                                                                    </label>
+                                                                </strong>
+                                                                <div style="text-align: center;">
+                                                                    <h3 style="color:red;padding-top:5px;">
+                                                                        100元</h3>
+                                                                </div>
+                                                                <!-- <p>
+                                                                                为一名义务教育阶段学生提供一学年（两个学期）的学习生活补助。</p>-->
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="min">
+                                                        <div class="container containerh">
+                                                            <div>
+                                                                <strong>
+                                                                    <label for="#">
+                                                                        <input name="moneyLove" id="other" type="radio" [(ngModel)]="moneytype" (change)="moneytype=3"
+                                                                        [checked]="moneytype ===3"
+                                                                        [value]="3"
+                                                                        >
+                                                                    </label>
+                                                                </strong>
+                                                                <div class="div1">
+                                                                    <h3>
+                                                                        <input name="textAmount"
+                                                                        [(ngModel)]="money"
+                                                                            style="color:red;padding-top:5px;"
+                                                                            class="textAmount donate_input50"
+                                                                            id="textAmount" type="text"
+                                                                            placeholder="输入其他">
+                                                                    </h3>
+                                                                </div>
+                                                                <!-- <p>
+                                                                                捐款多益善，少无拘，善款统一用于中国红基会公益项目和活动。</p>-->
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="125" height="41" class="pay_td" valign="middle">
+                                                电子邮箱：
+                                            </td>
+                                            <td height="41" valign="middle" style="padding-left: 14px;">
+                                                <input name="txtEmail" class="pay_int003" id="txtEmail" [(ngModel)]="email"
+                                                    style="width: 208px;" type="text">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="125" height="41" class="pay_td" valign="middle"
+                                                bgcolor="#f3f3f2">
+                                                捐赠人：
+                                            </td>
+                                            <td width="507" height="41" valign="middle" style="padding-left: 14px;"
+                                                bgcolor="#f3f3f2">
+                                                <input name="txtName" class="pay_int3" id="txtName" [(ngModel)]="donor"
+                                                    style="width: 208px;" type="text">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="125" height="41" class="pay_td" valign="middle"
+                                                bgcolor="#f3f3f2">
+                                                身份证号：
+                                            </td>
+                                            <td width="507" height="41" valign="middle" style="padding-left: 14px;"
+                                                bgcolor="#f3f3f2">
+                                                <input name="txtName" class="pay_int3" id="txtName" [(ngModel)]="identity"
+                                                    style="width: 208px;" type="text">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="125" height="41" class="pay_td" valign="middle">
+                                                是否显示姓名：
+                                            </td>
+                                            <td width="507" height="41" valign="middle" style="padding-left: 14px;">
+                                                <input name="radIsDisName" id="radIsDisNameYes" type="radio"
+                                                    checked="checked" value="是">&nbsp;是&nbsp;&nbsp;&nbsp;&nbsp;<input
+                                                    name="radIsDisName" id="radIsDisNameNo" type="radio" value="否">&nbsp;否
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="125" height="41" class="pay_td" valign="middle">
+                                                捐赠留言：
+                                            </td>
+                                            <td width="507" height="41" valign="middle" style="padding-left: 14px;">
+                                                <textarea name="txtRemark" class="pay_int02" id="txtRemark" [(ngModel)]="message"
+                                                    style="width: 446px;" rows="2" cols="45"></textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="int_ts" id="divMessage" style="width:335px;">
+                                </div>
+                                <div class="pay_but">
+                                    <button width="120" height="32" type="button" border="0"
+                                        style="cursor: pointer;float: left;" class="btn btn-primary" (click)="postData()">确认捐赠</button>
+                                    <button width="120" height="32" type="button" border="0" style="cursor: pointer;"
+                                        class="btn btn-primary">取消填写</button>
+                                    <input id="hid_sub" type="hidden" value="1">
+                                </div>
+                            </div>
+                            <div class="clear">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <a name="yhhk"></a>
+                    <p class="yhhk">
+                        银行汇款</p>
+                    <div class="jk_yh_title">
+                        银行转账至（请注明捐助项目）：</div>
+                    <div class="jk_yh_line">
+                    </div>
+                    <div class="jk_yh_title2">
+                        户名：中国红十字基金会</div>
+                    <div class="jk_yh_list">
+                        <div class="yh">
+                            <div class="jk_yh_num01">
+                                <span class="jk_shuzi">1</span>开户银行：中国银行北京市分行</div>
+                            <p>
+                                账号：349356004919</p>
+                        </div>
+                        <div class="yh">
+                            <div class="jk_yh_num01">
+                                <span class="jk_shuzi">2</span>开户银行：中国工商银行北京东四南支行</div>
+                            <p>
+                                账号：0200001019014483874</p>
+                        </div>
+                        <div class="yh">
+                            <div class="jk_yh_num01">
+                                <span class="jk_shuzi">3</span>开户银行：中国建设银行北京朝内大街支行</div>
+                            <p>
+                                账号：11001070300059000427</p>
+                        </div>
+                        <div class="yh">
+                            <div class="jk_yh_num01">
+                                <span class="jk_shuzi">4</span>开户银行：北京银行双榆树支行</div>
+                            <p>
+                                账号：01090321000120112052094</p>
+                        </div>
+                        <div class="yh">
+                            <div class="jk_yh_num01">
+                                <span class="jk_shuzi">5</span>开户银行：招商银行北京分行大望路支行</div>
+                            <p>
+                                账号：110914326810102</p>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="yh">
+                            <div class="jk_yh_num01">
+                                <span class="jk_shuzi">6</span>外币开户银行：中国银行</div>
+                            <p>
+                                BANK NAME：BANK OF CHINA</p>
+                        </div>
+                        <div class="clear">
+                        </div>
+                        <div class="yh_a">
+                            <p>
+                                银行账号：778350014954</p>
+                            <p>
+                                A/T NO：778350014954</p>
+                        </div>
+                        <div class="yh_a">
+                            <p>
+                                账户名称：中国红十字基金会</p>
+                            <p>
+                                ACCOUNT NAME：THE CHINESE RED CROSS FOUNDATION</p>
+                            <p>
+                                电代码：BKCHCNBJ</p>
+                        </div>
+                        <div class="yh_a" style="padding-left: 20px;">
+                            开户行地址：No.1, Fuxingmennei Street, Beijing</div>
+                        <div class="clear">
+                        </div>
+                    </div>
+                    <a name="dxjk"></a>
+                    <p class="dxjk">
+                        短信捐款</p>
+                    <div class="office_p2">
+                        <p>
+                            中国联通、中国电信用户编辑短信1、2、5到10699990，即向中国红十字基金会捐款1元、2元或5元；编辑短信95、910、915到10699990，即向中国红十字基金会每月捐款5元、10元或15元。取消每月捐款：中国联通、中国电信用户发送TD95、910、915到10699990即取消月捐5元、10元或15元业务。中国移动用户编辑短信1、2到10699990，即向中国红十字基金会捐款1元或2元。
+                        </p>
+                    </div>
+                    <div class="office_p3">
+                        <div class="office_left">
+                            <div class="office_ti">
+                                如捐款指定具体项目，可发送数字发送到：</div>
+                            <div class="office_con">
+                                <div class="office_xm">
+                                    <div class="jk_shuzi">
+                                        1</div>
+                                    红十字天使计划项目
+                                </div>
+                                <div class="office_list">
+                                    <ul>
+                                        <li>106999901&nbsp;&nbsp;援建博爱卫生院（站）</li>
+                                        <li>106999902&nbsp;&nbsp;乡村医生培训</li>
+                                        <li>106999903&nbsp;&nbsp;小天使基金（救助贫困白血病儿童）</li>
+                                        <li>106999904&nbsp;&nbsp;天使阳光基金（救助贫困先天性心脏病儿童）</li>
+
+                                        <li>106999906&nbsp;&nbsp;嫣然天使基金（救助贫困唇裂儿童）</li>
+                                        <li>106999907&nbsp;&nbsp;一般性捐款</li>
+                                        <li>106999908&nbsp;&nbsp;幸福天使基金（资助婴幼儿）</li>
+                                        <li>106999909&nbsp;&nbsp;爱必递基金（新）</li>
+                                        <li>1069999010&nbsp;&nbsp;玉米爱心基金</li>
+                                        <li>1069999011&nbsp;&nbsp;光明天使基金（资助盲人）</li>
+                                        <li>1069999012&nbsp;&nbsp;合生元母婴救助基金（新）</li>
+                                        <li>1069999013&nbsp;&nbsp;赈济家庭箱（新）</li>
+                                        <li>1069999014&nbsp;&nbsp;行者基金（关注亚健康）</li>
+                                        <li>1069999015&nbsp;&nbsp;博爱家园基金（新）</li>
+                                        <li>1069999016&nbsp;&nbsp;东方天使基金 </li>
+                                        <li>1069999018&nbsp;&nbsp;马路天使</li>
+                                        <li>1069999019&nbsp;&nbsp;成长天使基金</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="office_right">
+                            <div class="office_con1">
+                                <div class="office_xm2">
+                                    <div class="jk_shuzi">
+                                        2</div>
+                                    博爱助学计划项目
+                                </div>
+                                <div class="office_list">
+                                    <ul>
+                                        <li>1069999020&nbsp;&nbsp;捐建博爱学校</li>
+                                        <li>1069999021&nbsp;&nbsp;捐建红十字书库</li>
+                                        <li>1069999022&nbsp;&nbsp;捐建博爱助学基金</li>
+                                        <li>1069999023&nbsp;&nbsp;捐赠乡村教师培训</li>
+                                        <!--<li>1069999024&nbsp;&nbsp;捐建博爱电脑教室</li>
+                                                <li>1069999025&nbsp;&nbsp;捐体育关爱基金</li>
+                                                <li>1069999026&nbsp;&nbsp;捐燃烛行动（资助西部代课教师）</li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="office_con1" style="margin-top: 20px;">
+                                <div class="office_xm3">
+                                    <div class="jk_shuzi">
+                                        3</div>
+                                    其它公益资助项目
+                                </div>
+                                <div class="office_list">
+                                    <ul>
+                                        <li>1069999030&nbsp;&nbsp;捐赠中国红行动</li>
+                                        <!--<li>1069999031&nbsp;&nbsp;捐博客基金</li>
+                                                <li>1069999032&nbsp;&nbsp;捐志愿者真情基金</li>-->
+                                        <li>1069999033&nbsp;&nbsp;捐赠崔永元公益基金</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <a name="yjhk"></a>
+                    <p class="yjhk">
+                        邮局汇款</p>
+                    <div class="office_p">
+                        <p>
+                            邮局汇款至（请注明捐助项目）：</p>
+                        <p>
+                            中国红十字基金会&nbsp;&nbsp;&nbsp;&nbsp;地址：北京市东城区东单北大街&nbsp;干面胡同53号&nbsp;&nbsp;&nbsp;&nbsp;邮编：100010
+                        </p>
+                    </div>
+                    <!--<div class="office_p1">
+                                <p>
+                                    注：邮局汇款用户可自愿注册填写汇款人信息、自动产生捐赠序列号，方便用户进行到账查询，及接收邮寄收据。</p>
+                                <p>
+                                    如需产生序列号，请点击：<a href="http://new.crcf.org.cn/donations/onlinepay.html" title="http://new.crcf.org.cn/donations/onlinepay.html">http://new.crcf.org.cn/donations/onlinepay.html</a>。此外，请务必在您的汇款单附言栏中标明您的捐赠序列号。</p>
+                            </div>-->
+                    <a name="posjjk"></a>
+                    <p class="pos">
+                        POS机捐款</p>
+                    <p class="posjk">
+                        在摆放或张贴有<span> "银联卡慈善捐款点"</span> 的pos机上可选择向中国红基会或具体的慈善项目刷卡捐款</p>
+                    <a name="xcjk"></a>
+                    <p class="xcjk">
+                        现场捐款</p>
+                    <p class="posjk">
+                        地址：北京市东城区干面胡同53号中国红十字基金会310室 邮编：100010</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<myfooter></myfooter>

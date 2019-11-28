@@ -1,0 +1,97 @@
+<myheader></myheader>
+<div class="hidecontent" id="content2">
+    <div class="con_search">
+        <!-- <div class="search_ti">
+            
+        </div> -->
+        <div class="cha_search">
+            <!-- <div class="cha_search_tu" width="78" height="80">
+                <img width="78" height="80" src="/Templets/Hongjh/img/jiansuo_jing.png" border="0">
+            </div> -->
+            <div class="cha_search_form">
+                <div class="search_1">
+                    <span class="search_zi">捐赠人：</span> <span class="search_int1">
+                        <input name="jzr" class="j_int" id="jzr" [(ngModel)]="donor" type="text">
+                    </span>
+                </div>
+                <div class="search_2">
+                    <span class="search_zi">身份证号：</span> <span class="search_int1">
+                        <input name="jzr" class="j_int" id="jzr" [(ngModel)]="identity" type="text">
+                    </span>
+                </div>
+                <div class="search_2">
+                    <span class="search_zi">捐赠项目：</span> <span class="search_int">
+                            <select class="form-control" [(ngModel)]="projecttype">
+                                    <option *ngFor="let i of  projectdata;let n=index" [value]="i.name">{{i.name}}</option>
+                                </select>
+                    </span>
+                </div>
+                <div class="search_2">
+                    <span class="search_zi">援赠时间：</span> <span class="search_int">
+                        <angular2-date-picker [(ngModel)]="date" [settings]="settings">
+                        </angular2-date-picker>
+                    </span>
+                </div>
+            </div>
+            <div class="cha_button">
+                <a class="searchBg" style="color: white;"  (click)="postData()" >开始查询
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+    <div class="con_table" id="div_list">
+        <table width="100%" class="ztable" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr id="con_tr">
+                    <td width="150" align="center"><span class="STYLE3">项目名称</span></td>
+                    <td width="150" align="center"><span class="STYLE3">捐赠人</span></td>
+                    <td width="150" align="center"><span class="STYLE3">物资</span></td>
+                    <td width="150" align="center"><span class="STYLE3">金额(元)</span></td>
+                    <td width="150" align="center"><span class="STYLE3">留言</span></td>
+                    <td width="150" align="center"><span class="STYLE3">援赠时间</span></td>
+                    <td width="150" align="center"><span class="STYLE3">处理状态</span></td>
+                </tr>
+            </tbody>
+            <tbody id="dataTbody">
+                <tr *ngFor="let i of  donaterdata;let n=index">
+                    <td title="天使阳光基金" align="left">&nbsp;{{i.projecttype}}</td>
+                    <td title="齐*豪" align="left">&nbsp;{{i.donor}}</td>
+                    <td title="山东省淄博市临淄区" align="left">&nbsp;{{i.describ}}</td>
+                    <td title="国家彩票公益金" align="left">&nbsp;{{i.money}}元</td>
+                    <td align="left">&nbsp;{{i.message}}</td>
+                    <td align="left">&nbsp;{{i.donordate}}</td>
+                    <td align="left">&nbsp;{{i.donatype}}</td>
+                    <td align="left" *ngIf="i.donatype ==='0'">&nbsp;待收取</td>
+                    <td align="left" *ngIf="i.donatype ==='1'">&nbsp;待审批</td>
+                    <td align="left" *ngIf="i.donatype ==='2'">&nbsp;待处理</td>
+                    <td align="left" *ngIf="i.donatype ==='3'">&nbsp;待送达</td>
+                    <td align="left" *ngIf="i.donatype ==='4'">&nbsp;已送达</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td class="con_fen" colspan="8">
+                        <div class="pagenb" style="width: 100%; padding-left: 30%;">
+                            <ul class="pagination ">
+                                <li><a href="javascript:void(0);">上一页</a></li>
+                                <li class="active"><a>1</a></li>
+                                <li><a href="javascript:GetSearchList('2');">2</a></li>
+                                <li><a href="javascript:GetSearchList('3');">3</a></li>
+                                <li><a href="javascript:GetSearchList('4');">4</a></li>
+                                <li><a href="javascript:GetSearchList('5');">5</a></li>
+                                <li><a>...</a></li>
+                                <li><a href="javascript:GetSearchList('6497');">6497</a></li>
+                                <li><a href="javascript:GetSearchList('2');">下一页</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+<myfooter></myfooter>

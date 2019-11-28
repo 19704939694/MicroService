@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.ibm.jiuzai.dao.DonaterDao" >
+    <resultMap id="BaseResultMap" type="com.ibm.jiuzai.entity.Donateuser" >
+        <result column="projecttype" property="projecttype" jdbcType="VARCHAR" />
+        <result column="donor" property="donor" jdbcType="VARCHAR" />
+        <result column="describ" property="describ" jdbcType="VARCHAR" />
+        <result column="money" property="money" jdbcType="BIGINT" />
+        <result column="message" property="message" jdbcType="VARCHAR" />
+        <result column="donordate" property="donordate" jdbcType="CHAR" />
+        <result column="donatype" property="donatype" jdbcType="INTEGER" />
+    </resultMap>
+    <resultMap id="UpdateResultMap" type="com.ibm.jiuzai.entity.Donateuser" >
+        <result column="msindex" property="msindex" jdbcType="INTEGER" />
+        <result column="projecttype" property="projecttype" jdbcType="VARCHAR" />
+        <result column="donor" property="donor" jdbcType="VARCHAR" />
+        <result column="email" property="email" jdbcType="VARCHAR" />
+        <result column="address" property="address" jdbcType="VARCHAR" />
+        <result column="contact" property="contact" jdbcType="VARCHAR" />
+         <result column="describ" property="describ" jdbcType="VARCHAR" />
+        <result column="userlevel" property="userlevel" jdbcType="CHAR" />
+        <result column="intact" property="intact" jdbcType="CHAR" />
+        <result column="postdate" property="postdate" jdbcType="VARCHAR" />
+        <result column="qualitydetail" property="qualitydetail" jdbcType="VARCHAR" />
+        <result column="qualitydate" property="qualitydate" jdbcType="VARCHAR" />
+        <result column="donordate" property="donordate" jdbcType="CHAR" />
+        <result column="donatype" property="donatype" jdbcType="INTEGER" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+        projecttype, donor, describ, money, message, donordate, donatype
+    </sql>
+    <select id="selectAllDonater" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from donateuser where 1=1
+        <if test="donor!=null and donor!=''">
+            and donor = #{donor}
+        </if>
+         <if test="identity!=null and identity!=''">
+            and identity = #{identity}
+        </if>
+         <if test="projecttype!=null and projecttype!=''">
+            and projecttype = #{projecttype}
+        </if>
+         <if test="donordate!=null and donordate!=''">
+            and donordate = #{donordate}
+        </if>
+         <if test="donatype!=null and donatype!=''">
+            and donatype = #{donatype}
+        </if>
+        order by msindex
+        limit #{offSet},10;
+    </select>
+    <select id="selectDonaterForUpdate" resultMap="UpdateResultMap">
+        select msindex,
+        projecttype,donor,email,address,contact,describ,userlevel,intact,postdate,
+        qualitydetail,qualitydate,donordate,donatype
+        from donateuser where 1=1
+        <if test="userlevel!=null and userlevel!=''">
+            and userlevel = #{userlevel}
+        </if>
+         <if test="intact!=null and intact!=''">
+            and intact = #{intact}
+        </if>
+         <if test="projecttype!=null and projecttype!=''">
+            and projecttype = #{projecttype}
+        </if>
+         <if test="qualitydate!=null and qualitydate!=''">
+            and qualitydate = #{qualitydate}
+        </if>
+         <if test="donatype!=null and donatype!=''">
+            and donatype = #{donatype}
+        </if>
+        order by msindex
+        limit #{offSet},10;
+    </select>
+    <insert id="insertDonater" parameterType="com.ibm.jiuzai.entity.Donateuser">
+        insert into donateuser(email,donor,identity,message,money,describ,userlevel,intact,address,contact,postdate,qualitydate,qualitydetail,projecttype)
+        value(#{email},#{donor},#{identity},#{message},#{money},#{describ},#{userlevel},#{intact},#{address},#{contact},#{postdate},#{qualitydate},#{qualitydetail},#{projecttype})
+    </insert>
+    <update id="updateDonater" parameterType="java.util.List">
+        <foreach collection="donaterlist" item="item" separator=";" close=";">
+        update donateuser
+        set donatype = #{item.donatype}
+        where msindex = #{item.msindex}
+        </foreach>	
+    </update>
+</mapper>

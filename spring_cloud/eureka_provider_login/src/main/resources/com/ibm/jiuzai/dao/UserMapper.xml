@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.ibm.jiuzai.dao.UserDao" >
+    <resultMap id="BaseResultMap" type="com.ibm.jiuzai.entity.User" >
+        <result column="id" property="id" jdbcType="VARCHAR" />
+        <result column="user_name" property="userName" jdbcType="VARCHAR" />
+        <result column="password" property="password" jdbcType="VARCHAR" />
+        <result column="age" property="age" jdbcType="INTEGER" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+        id, user_name, password, age
+    </sql>
+    <select id="selectByPrimaryKey" resultType="com.ibm.jiuzai.entity.User">
+        select
+        <include refid="Base_Column_List" />
+        from user_t
+        where 1=1
+        <if test="arg0!=null and arg0!=''">
+            and user_name = #{arg0}
+        </if>
+         <if test="arg1!=null and arg1!=''">
+            and password = #{arg1}
+        </if>  
+        
+    </select>
+</mapper>
